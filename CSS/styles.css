@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Playfair+Display&family=Special+Elite&family=Ubuntu:wght@300&display=swap');
+
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-regular-heading: "Special Elite", "source-sans-pro", sans-serif;
+    --ff-regular: "source-sans-pro", sans-serif;
+    --fs-regular: 400 1.125rem/1.5;
+    --fs-heading1: 3.125rem/1.3;
+    --fs-heading2: 2.5rem;
+    --fs-heading3: 1.875rem/1.5;
+    --fs-heading4: 1.5rem/1.5;
+}
+
+body {
+    background: #EFEFEF;
+    font-family: var(--ff-regular);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #e1e7e9;
+}
+
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.61);
+    z-index: 2;
+}
+
+.top-banner-image {
+    border-style: solid;
+    border-color: #e1e7e9;
+    border-width: 2.125rem 2.125rem 0 2.125rem;
+    max-width: 90rem;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.menu-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e1e7e9;
+    max-width: 90rem;
+    width: 100%;
+    height: 7rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+}
+
+.menu {
+    color: #000000;
+    text-align: left;
+    font: var(--fs-heading4) var(--ff-regular-heading);
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.index-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 2vh;
+}
+
+#h1-index {
+    font: var(--fs-heading1) var(--ff-regular-heading);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/** About me section **/
+
+.profile-container,
+.container-all-projects,
+.contact-form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left,
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)),
+        linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(to left, rgba(173, 216, 230, 0.202), rgba(173, 216, 230, 0.214));
+    max-width: 73rem;
+    width: 95%;
+    height: fit-content;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+    padding: 3rem;
+}
+
+.profile-container::before,
+.container-all-projects::before,
+.contact-form-section::before {
+    border-radius: 0.75rem;
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.70) 100%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+        url('/images/frost_texture.png') center center/cover no-repeat,
+        lightgray;
+    background-color: rgba(173, 216, 230, 0.60);
+    box-shadow: 0rem 0.25rem 0.375rem 0rem rgba(0, 0, 0, 0.15);
+    filter: blur(3.5px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    content: "";
+}
+
+.profile-container * {
+    margin-block: 1rem;
+}
+
+.profile-container p {
+    font: var(--fs-regular) var(--ff-regular);
+    max-width: 85%;
+}
+
+#northern-p {
+    font-style: italic;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font: var(--fs-heading2) var(--ff-regular-heading);
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+}
+
+.skills-container p {
+    margin: 0 1rem;
+    font: var(--fs-regular) var(--ff-regular);
+}
+
+#profile-image {
+    border: 4px solid #06406C;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    max-width: 85%;
+    height: auto;
+}
+
+/** Projects section **/
+
+.container-all-projects {
+    margin-block: 2vh;
+}
+
+.project-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/images/snow-ice_texture.png) center center/cover no-repeat;
+    filter: blur(0.125rem);
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.9) 100%), url(/images/snow-ice_texture.png), lightgray 50% / cover no-repeat;
+    box-shadow: 0rem 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.25);
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    height: fit-content;
+    flex-shrink: 0;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+}
+
+.project-container,
+.container-all-projects * {
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.project-container img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    border: 4px solid #FFF;
+}
+
+.project-heading {
+    font: var(--fs-heading3) var(--ff-regular-heading);
+}
+
+.project-heading2 {
+    font: var(--fs-heading4) var(--ff-regular-heading);
+}
+
+/** contact form section **/
+.contact-form-section {
+    color: rgb(0, 0, 0);
+    font: var(--fs-regular) var(--ff-regular);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45rem;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.60);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.contact-h {
+    text-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    font: var(--fs-heading3) var(--ff-regular-heading);
+    align-self: center;
+}
+
+.form-label {
+    margin-left: 0.5rem;
+}
+
+.form-field {
+    margin: 1rem 0;
+}
+
+.input-box,
+.message-box {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.67);
+    background-color: #ffffff;
+    font-size: 0.875rem;
+}
+
+.error-text {
+    color: rgb(253, 225, 225);
+    font-size: 0.875rem;
+    padding: 0.3rem;
+}
+
+.submit-button {
+    background: #d58131;
+    color: #ffffff;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    width: 8rem;
+    border-radius: 0.625rem;
+    border: 0.0625rem solid #000;
+    background: #FFF;
+    box-shadow: 0rem 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.25);
+    color: black;
+    font: var(--fs-regular) var(--ff-regular);
+}
+
+.message-box {
+    height: 15rem;
+}
+
+#success-message {
+    display: none;
+    align-self: center;
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    text-align: center;
+    z-index: 100;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.write-message {
+    padding: 0 2rem 2rem 2rem;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 13rem;
+    justify-content: center;
+    align-items: center;
+    background: #DDE3E6;
+}
+
+/** media queries **/
+
+@media screen and (max-width: 1023px) {
+    #h1-index {
+        font-size: clamp(1.75rem, 1.125rem + 3.125vw, 3.125rem);
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-size: clamp(1.4rem, 0.8993rem + 2.5036vw, 2.5rem);
+    }
+
+    h6,
+    h7,
+    h8,
+    h9,
+    .menu,
+    .project-heading,
+    .contact-h {
+        font-size: clamp(1.4rem, 1.1838rem + 1.0811vw, 1.875rem);
+    }
+
+    .project-heading2 {
+        font-size: clamp(1.25rem, 1.1362rem + 0.569vw, 1.5rem);
+    }
+
+    .profile-container p {
+        font-size: clamp(1rem, 0.9432rem + 0.2841vw, 1.125rem);
+    }
+
+    .profile-container,
+    .container-all-projects,
+    .contact-form-section {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    #contact-form {
+        width: 95%;
+    }
+
+    .message-box {}
+
+    .top-banner-image {
+        border: 0;
+    }
+
+    .menu-banner {
+        height: clamp(4rem, 1.8523rem + 10.7383vw, 7rem);
+    }
+
+    /** phones **/
+
+}
