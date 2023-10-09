@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tord's Portofolio 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/qym4bov.css">
     <link rel="stylesheet" href="/CSS/styles.css">
 </head>
@@ -19,13 +20,21 @@
         </div>
     </header>
 
+
     <main class="index-main">
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li><a href="#profile-container">About</a></li>
+                <li><a href="#container-all-projects">Projects</a></li>
+                <li><a href="#contact-form-section">Contact</a></li>
+            </ul>
+        </div>
         <h1 id="h1-index">Portofolio 1
             <br>
             Frontend Developer
         </h1>
 
-        <section class="profile-container">
+        <section class="profile-container" id="profile-container">
             <h2>Illustrious Front-End Artisan</h2>
             <p id="northern-p">"As the northern lights dance in the skies, so should your user experience be on the
                 web."</p>
@@ -54,7 +63,7 @@
             </div>
         </section class="profile-container">
 
-        <section class="container-all-projects">
+        <section class="container-all-projects" id="container-all-projects">
             <h5>My Legendary Creations</h5>
             <div class="project-container">
                 <h6 class="project-heading">Mango Quest</h6>
@@ -94,7 +103,7 @@
             </div>
         </section>
 
-        <section class="contact-form-section">
+        <section class="contact-form-section" id="contact-form-section">
             <p class="write-message">You can write an email to tordakelarsson@pm.me or fill out the form below:</p>
             <form id="contact-form">
                 <h7 class="contact-h">Contact me:</h7>
@@ -128,6 +137,10 @@
     <footer>
         <p>© 2023 Tord Åke Larsson. All Rights Reserved</p>
     </footer>
+    <button id="backToTop" class="back-to-top-button">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

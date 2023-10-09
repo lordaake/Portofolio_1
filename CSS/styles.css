@@ -23,6 +23,10 @@ body {
     font-family: var(--ff-regular);
 }
 
+main {
+    position: relative;
+}
+
 header {
     width: 100%;
     display: flex;
@@ -96,7 +100,7 @@ header::before {
 #h1-index {
     font: var(--fs-heading1) var(--ff-regular-heading);
     text-align: center;
-    margin: 1rem 0;
+    padding: 3rem;
 }
 
 /** About me section **/
@@ -125,7 +129,6 @@ header::before {
 .profile-container::before,
 .container-all-projects::before,
 .contact-form-section::before {
-    border-radius: 0.75rem;
     background:
         linear-gradient(0deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.70) 100%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
@@ -192,9 +195,9 @@ h5 {
     width: 100%;
     height: 100%;
     background: url(/images/snow-ice_texture.png) center center/cover no-repeat;
-    filter: blur(0.125rem);
     z-index: -1;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.9) 100%), url(/images/snow-ice_texture.png), lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(/images/snow-ice_texture.png), lightgray 50% / cover no-repeat;
+    /** background: rgba(255, 255, 255, 0.9); **/
     box-shadow: 0rem 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.25);
 }
 
@@ -206,7 +209,6 @@ h5 {
     width: 95%;
     height: fit-content;
     flex-shrink: 0;
-    border-radius: 10px;
     position: relative;
     z-index: 1;
     padding: 1rem;
@@ -221,7 +223,7 @@ h5 {
 .project-container img {
     width: 90%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     border: 4px solid #FFF;
 }
 
@@ -231,6 +233,10 @@ h5 {
 
 .project-heading2 {
     font: var(--fs-heading4) var(--ff-regular-heading);
+}
+
+.project-description {
+    width: 90%;
 }
 
 /** contact form section **/
@@ -249,6 +255,22 @@ h5 {
     padding: 1.5rem;
     border-radius: 0.5rem;
     color: black;
+    position: relative;
+    z-index: 1;
+}
+
+#contact-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/images/snow-ice_texture.png) center center/cover no-repeat;
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(/images/snow-ice_texture.png), lightgray 50% / cover no-repeat;
+    /** background: rgba(255, 255, 255, 0.9); **/
+    box-shadow: 0rem 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.25);
 }
 
 .contact-h {
@@ -324,14 +346,93 @@ footer {
     height: 13rem;
     justify-content: center;
     align-items: center;
-    background: #DDE3E6;
+    background-color: rgba(255, 255, 255, 0.61);
+}
+
+/** Pop up menu **/
+
+.menu-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e1e7e9;
+    transition: transform 0.5s ease-in-out;
+    z-index: 9999;
+    text-align: center;
+    transform: translateY(100%);
+    transition: smooth 0.5s ease-in-out;
+}
+
+.menu-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.61);
+    z-index: 1;
+}
+
+
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    font: var(--fs-heading4) var(--ff-regular);
+    z-index: 2;
+}
+
+.menu-list li {
+    margin: 50% 0;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-btn {
+    cursor: pointer;
+}
+
+.menu-container.menu-open {
+    transform: translateY(0);
+    display: flex;
+    justify-content: center;
+    transition: smooth 0.5s ease-in-out;
+}
+
+/** Back to top arrow **/
+
+.back-to-top-button {
+    position: fixed;
+    right: 2%;
+    bottom: 1.875rem;
+    background-color: #e1e7e9;
+    color: #000000;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0px 0px 0.625rem rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    z-index: 100;
 }
 
 /** media queries **/
 
 @media screen and (max-width: 1023px) {
+
+    .profile-container,
+    .container-all-projects * {
+        margin-block: clamp(0.7rem, 0.5634rem + 0.6828vw, 1rem);
+    }
+
     #h1-index {
-        font-size: clamp(1.75rem, 1.125rem + 3.125vw, 3.125rem);
+        font-size: clamp(1.5rem, 0.7296rem + 3.7464vw, 3.125rem);
+        padding: clamp(1.5rem, 0.7889rem + 3.4582vw, 3rem);
     }
 
     h2,
@@ -347,7 +448,8 @@ footer {
     h9,
     .menu,
     .project-heading,
-    .contact-h {
+    .contact-h,
+    .menu-list {
         font-size: clamp(1.4rem, 1.1838rem + 1.0811vw, 1.875rem);
     }
 
@@ -364,6 +466,11 @@ footer {
     .contact-form-section {
         padding-right: 0;
         padding-left: 0;
+    }
+
+    .back-to-top-button {
+        font-size: clamp(1rem, 0.763rem + 1.1527vw, 1.5rem);
+        padding: clamp(1rem, 0.763rem + 1.1527vw, 1.5rem);
     }
 
 }
