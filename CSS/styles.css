@@ -353,18 +353,17 @@ footer {
 /** Pop up menu **/
 
 .menu-container {
-    display: none;
     position: absolute;
-    top: 0;
+    top: 100%;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #e1e7e9;
-    transition: transform 0.5s ease-in-out;
     z-index: 9999;
     text-align: center;
     transform: translateY(100%);
-    transition: smooth 0.5s ease-in-out;
+    display: none;
+    justify-content: center;
 }
 
 .menu-container::before {
@@ -375,7 +374,6 @@ footer {
     background-color: rgba(255, 255, 255, 0.61);
     z-index: 1;
 }
-
 
 .menu-list {
     list-style-type: none;
@@ -399,9 +397,8 @@ footer {
 
 .menu-container.menu-open {
     transform: translateY(0);
+    top: 0;
     display: flex;
-    justify-content: center;
-    transition: smooth 0.5s ease-in-out;
 }
 
 /** Back to top arrow **/
@@ -420,6 +417,10 @@ footer {
     box-shadow: 0px 0px 0.625rem rgba(0, 0, 0, 0.2);
     font-size: 1.5rem;
     z-index: 100;
+}
+
+#hidden-back {
+    display: none;
 }
 
 /** media queries **/
