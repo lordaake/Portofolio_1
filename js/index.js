@@ -8,11 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     menuItems.forEach((item) => {
-        item.addEventListener("click", function () {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
             menuContainer.classList.remove("menu-open");
+
+            const targetId = item.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+            }
         });
     });
 });
+
 
 
 let backToTopButton = document.getElementById("backToTop");
